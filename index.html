@@ -15,36 +15,42 @@
       integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
       crossorigin="anonymous"
     />
+    <script
+      src="https://kit.fontawesome.com/024568a991.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="styles.css" />
     <title>Timer</title>
   </head>
   <body>
     <div id="container">
       <h1>Timer</h1>
-     
-        <form action="" id="setup-form">
-          <div class="hour">
-            <label for="hours">Hours</label>
-            <input type="number" name="hours" id="hours" min="0" max="59" />  
-          </div>
-          <div class="min">
-            <label for="minutes">Minutes</label>
-            <input type="number" name="minutes" id="minutes" min="0" max="59" />
-          </div>
-          <div class="sec">
-            <label for="seconds">Seconds</label>
-            <input type="number" name="seconds" id="seconds" min="0" max="59" />
-          </div>
 
-          <button class="btn btn-sm" id="set">Set timer</button>
-        </form>
-      
+      <form action="" id="setup-form">
+        <div class="hour">
+          <label for="hours">Hours</label>
+          <input type="number" name="hours" id="hours" min="0" max="59" />
+        </div>
+        <div class="min">
+          <label for="minutes">Minutes</label>
+          <input type="number" name="minutes" id="minutes" min="0" max="59" />
+        </div>
+        <div class="sec">
+          <label for="seconds">Seconds</label>
+          <input type="number" name="seconds" id="seconds" min="0" max="59" />
+        </div>
+
+        <button class="btn btn-sm" id="set">Set timer</button>
+      </form>
+
       <div class="buttons">
         <button class="btn btn-sm" id="start">Start</button>
         <button class="btn btn-sm" id="reset">Reset</button>
       </div>
-
-      <p id="display">00:00:00</p>
+      <div>
+        <p id="display">00:00:00</p>
+        <i class="fas fa-stopwatch" style="color: #aa2ee6"></i>
+      </div>
     </div>
     <script src="app.js"></script>
   </body>

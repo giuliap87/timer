@@ -1,3 +1,27 @@
 body {
-    background-color: pink;
+  margin: 0;
+  padding: 0;
+  background-color: pink;
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+.btn {
+  border-color: blueviolet;
+  color: dimgray;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid grey;
+  margin: 50px 300px;
+  padding: 20px;
+}
+
+.form {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
 }

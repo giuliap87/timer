@@ -2,6 +2,7 @@ const form = document.querySelector("#setup-form");
 const startBtn = document.querySelector("#start");
 const resetBtn = document.querySelector("#reset");
 const display = document.querySelector("#display");
+const set = document.querySelector("#set");
 
 let interval;
 
@@ -24,16 +25,20 @@ const timeArray = [hours, minutes, seconds];
 timeArray.forEach((el) => {
   el.input.addEventListener("change", () => {
     let val = el.input.value;
-    if (val) {
-      if (val >= 0 && val < 60) {
-        if (val < 10) {
-          val = `0${val}`;
-        }
-        el.value = val;
-        display.innerText = `${hours.value}:${minutes.value}:${seconds.value}`;
+    if (!val) {
+      val = "00";
+    } else if (val >= 0 && val < 60) {
+      if (val < 10) {
+        val = `0${val}`;
       }
-    } else {
-      return;
     }
+    el.value = val;
   });
 });
+
+function setTimer(e) {
+  e.preventDefault();
+  display.innerText = `${hours.value}:${minutes.value}:${seconds.value}`;
+}
+
+set.addEventListener("click", setTimer);

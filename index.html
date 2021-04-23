@@ -8,13 +8,30 @@
     <title>Timer</title>
   </head>
   <body>
-
-    <h1>Timer</h1>
-    <p>Giulia</p>
-
+    <div id="container">
       <h1>Timer</h1>
-      <p>deb</p>
 
+      <form action="">
+        <label for="hour">Hour</label>
+        <input type="text" name="hour" id="hour" />
+
+        <label for="minutes">Minutes</label>
+        <input type="text" name="minutes" id="minutes" />
+
+        <label for="seconds">Seconds</label>
+        <input type="text" name="seconds" id="seconds" />
+
+        <button id="set">Set timer</button>
+      </form>
+
+      <div class="buttons">
+        <button id="start">Start</button>
+
+        <button id="reset">Reset</button>
+      </div>
+
+      <p>00:00:00</p>
+    </div>
     <script src="app.js"></script>
   </body>
 </html>

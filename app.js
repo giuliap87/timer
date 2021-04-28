@@ -4,6 +4,8 @@ const resetBtn = document.querySelector("#reset");
 const display = document.querySelector("#display");
 const setBtn = document.querySelector("#set");
 
+startBtn.disabled = resetBtn.disabled = true;
+
 let interval;
 
 // create var to toggle text in start/pause button
@@ -44,12 +46,17 @@ timeArray.forEach((el) => {
 
 function setTimer(e) {
   e.preventDefault();
+  startBtn.disabled = resetBtn.disabled = false;
+
   display.innerText = `${hours.value}:${minutes.value}:${seconds.value}`;
 }
 
 function startTimer() {
   let totSecs = +hours.value * 3600 + +minutes.value * 60 + +seconds.value;
+
   interval = setInterval(() => {
+    console.log("start");
+
     hours.value = Math.floor(totSecs / 3600);
     minutes.value = Math.floor((totSecs % 3600) / 60);
     seconds.value = Math.floor(totSecs % 60);
@@ -80,6 +87,7 @@ function resetTimer() {
   display.innerText = "00:00:00";
   startBtn.innerText = "Start";
   toggleBtn = false;
+  startBtn.disabled = resetBtn.disabled = true;
 }
 
 function pauseTimer() {

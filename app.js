@@ -66,7 +66,19 @@ function startTimer() {
       display.innerText = `${hours.value}:${minutes.value}:${seconds.value}`;
     }
   }, 1000);
+};
+
+function resetTimer() {
+ clearInterval(interval); 
+ timeArray.forEach((el) => {
+   el.input.value = 0;
+   el.value = "00"; 
+  })
+  display.innerText = "00:00:00";
 }
+
+
 
 setBtn.addEventListener("click", setTimer);
 startBtn.addEventListener("click", startTimer);
+resetBtn.addEventListener("click", resetTimer);

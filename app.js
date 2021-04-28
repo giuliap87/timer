@@ -2,7 +2,7 @@ const form = document.querySelector("#setup-form");
 const startBtn = document.querySelector("#start");
 const resetBtn = document.querySelector("#reset");
 const display = document.querySelector("#display");
-const set = document.querySelector("#set");
+const setBtn = document.querySelector("#set");
 
 let interval;
 
@@ -44,4 +44,29 @@ function setTimer(e) {
   display.innerText = `${hours.value}:${minutes.value}:${seconds.value}`;
 }
 
-set.addEventListener("click", setTimer);
+function startTimer() {
+  let totSecs = +hours.value * 3600 + +minutes.value * 60 + +seconds.value;
+  interval = setInterval(() => {
+    hours.value = Math.floor(totSecs / 3600);
+    minutes.value = Math.floor((totSecs % 3600) / 60);
+    seconds.value = Math.floor(totSecs % 60);
+
+    if (hours.value < 10) {
+      hours.value = `0${hours.value}`;
+    }
+    if (minutes.value < 10) {
+      minutes.value = `0${minutes.value}`;
+    }
+    if (seconds.value < 10) {
+      seconds.value = `0${seconds.value}`;
+    }
+
+    if (totSecs >= 0) {
+      totSecs--;
+      display.innerText = `${hours.value}:${minutes.value}:${seconds.value}`;
+    }
+  }, 1000);
+}
+
+setBtn.addEventListener("click", setTimer);
+startBtn.addEventListener("click", startTimer);

@@ -53,6 +53,7 @@ function setTimer(e) {
 
 function startTimer() {
   let totSecs = +hours.value * 3600 + +minutes.value * 60 + +seconds.value;
+  let timeIsUp = false;
 
   interval = setInterval(() => {
     console.log("start");
@@ -71,9 +72,15 @@ function startTimer() {
       seconds.value = `0${seconds.value}`;
     }
 
-    if (totSecs >= 0) {
+    if (totSecs > 0 && timeIsUp === false) {
       totSecs--;
       display.innerText = `${hours.value}:${minutes.value}:${seconds.value}`;
+    } else {
+      timeIsUp = true;
+      totSecs++;
+      startBtn.disabled = true;
+      resetBtn.innerText = "Stop";
+      display.innerText = `Time is up: - ${hours.value}:${minutes.value}:${seconds.value}`;
     }
   }, 1000);
 }
@@ -86,6 +93,8 @@ function resetTimer() {
   });
   display.innerText = "00:00:00";
   startBtn.innerText = "Start";
+  resetBtn.innerText = "Reset";
+
   toggleBtn = false;
   startBtn.disabled = resetBtn.disabled = true;
 }

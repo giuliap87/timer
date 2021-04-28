@@ -6,6 +6,9 @@ const setBtn = document.querySelector("#set");
 
 let interval;
 
+// create var to toggle text in start/pause button
+let toggleBtn = false;
+
 const hours = {
   input: document.querySelector("#hours"),
   value: "00",
@@ -66,19 +69,31 @@ function startTimer() {
       display.innerText = `${hours.value}:${minutes.value}:${seconds.value}`;
     }
   }, 1000);
-};
+}
 
 function resetTimer() {
- clearInterval(interval); 
- timeArray.forEach((el) => {
-   el.input.value = 0;
-   el.value = "00"; 
-  })
+  clearInterval(interval);
+  timeArray.forEach((el) => {
+    el.input.value = 0;
+    el.value = "00";
+  });
   display.innerText = "00:00:00";
 }
 
-
+function pauseTimer() {
+  clearInterval(interval);
+}
 
 setBtn.addEventListener("click", setTimer);
-startBtn.addEventListener("click", startTimer);
+startBtn.addEventListener("click", () => {
+  toggleBtn = !toggleBtn;
+
+  if (toggleBtn) {
+    startTimer();
+    startBtn.innerText = "Pause";
+  } else {
+    startBtn.innerText = "Start";
+    pauseTimer();
+  }
+});
 resetBtn.addEventListener("click", resetTimer);

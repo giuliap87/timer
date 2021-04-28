@@ -78,6 +78,8 @@ function resetTimer() {
     el.value = "00";
   });
   display.innerText = "00:00:00";
+  startBtn.innerText = "Start";
+  toggleBtn = false;
 }
 
 function pauseTimer() {

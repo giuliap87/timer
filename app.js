@@ -27,12 +27,15 @@ timeArray.forEach((el) => {
     let val = el.input.value;
     if (!val) {
       val = "00";
-    } else if (val >= 0 && val < 60) {
-      if (val < 10) {
+    } else if (val >= 0 && val < 60 && val.length < 3) {
+      if (val < 10 && val.length < 2) {
         val = `0${val}`;
       }
+      el.value = val;
+    } else {
+      val = "00";
+      return;
     }
-    el.value = val;
   });
 });
 

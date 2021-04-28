@@ -1,27 +1,72 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+
+}
+
 body {
   margin: 0;
   padding: 0;
   background-color: pink;
   font-family: "Noto Sans JP", sans-serif;
-}
-
-.btn {
-  border-color: blueviolet;
-  color: dimgray;
+  text-align: center;
 }
 
 #container {
+  width: 700px;
+  margin: 20px auto;
+  border: 2px solid paleturquoise;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid grey;
-  margin: 50px 300px;
-  padding: 20px;
 }
 
-.form {
-  padding: 20px;
+#container h1 {
+  font-size: 2.0rem;
+  font-weight: 900;
+  color: #aa2ee6;
+  padding: 10px;
+}
+
+form {
+  width: 450px;
+  padding: 10px 0;
   display: flex;
   justify-content: space-between;
+}
+
+.btn {
+  padding: 3px 6px;
+  background-color: #da9ff9;
+  border-radius: 10px;
+  border: 1px solid white;
+  color: white;
+}
+
+form input {
+  border: 1px solid paleturquoise;
+  border-radius: 10px;
+}
+
+form label {
+font-size: 1.0rem;
+color: #5c969e;
+font-weight: bold;
+}
+
+.buttons {
+  width: 300px;
+  display: flex; 
+  justify-content: center;
+}
+
+.buttons button {
+  margin: 15px 7px;
+}
+
+#display {
+ font-size: 1.8rem;
+ font-weight: bold;
+ color: #5c969e;
+ margin: 15px 0;
 }

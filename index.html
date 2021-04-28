@@ -21,23 +21,26 @@
   <body>
     <div id="container">
       <h1>Timer</h1>
-      <div class="form">
+     
         <form action="" id="setup-form">
-          <label for="hours">Hour</label>
-          <input type="number" name="hours" id="hours" min="0" max="59" />
-
-          <label for="minutes">Minutes</label>
-          <input type="number" name="minutes" id="minutes" min="0" max="59" />
-
-          <label for="seconds">Seconds</label>
-          <input type="number" name="seconds" id="seconds" min="0" max="59" />
+          <div class="hour">
+            <label for="hours">Hours</label>
+            <input type="number" name="hours" id="hours" min="0" max="59" />  
+          </div>
+          <div class="min">
+            <label for="minutes">Minutes</label>
+            <input type="number" name="minutes" id="minutes" min="0" max="59" />
+          </div>
+          <div class="sec">
+            <label for="seconds">Seconds</label>
+            <input type="number" name="seconds" id="seconds" min="0" max="59" />
+          </div>
 
           <button class="btn btn-sm" id="set">Set timer</button>
         </form>
-      </div>
+      
       <div class="buttons">
         <button class="btn btn-sm" id="start">Start</button>
-
         <button class="btn btn-sm" id="reset">Reset</button>
       </div>
 

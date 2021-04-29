@@ -30,15 +30,36 @@
       <form action="" id="setup-form">
         <div class="hour">
           <label for="hours">Hours</label>
-          <input type="number" name="hours" id="hours" min="0" max="59" value="0"/>
+          <input
+            type="number"
+            name="hours"
+            id="hours"
+            min="0"
+            max="59"
+            value="0"
+          />
         </div>
         <div class="min">
           <label for="minutes">Minutes</label>
-          <input type="number" name="minutes" id="minutes" min="0" max="59" value="0"/>
+          <input
+            type="number"
+            name="minutes"
+            id="minutes"
+            min="0"
+            max="59"
+            value="0"
+          />
         </div>
         <div class="sec">
           <label for="seconds">Seconds</label>
-          <input type="number" name="seconds" id="seconds" min="0" max="59" value="0"/>
+          <input
+            type="number"
+            name="seconds"
+            id="seconds"
+            min="0"
+            max="59"
+            value="0"
+          />
         </div>
 
         <button class="btn btn-sm" id="set">Set timer</button>
@@ -49,10 +70,12 @@
         <button class="btn btn-sm" id="reset">Reset</button>
       </div>
       <div class="time-up">
-        <i class="icon fas fa-stopwatch fa-2x" style="color: #aa2ee6"></i>
+        <i
+          class="icon fas fa-stopwatch hidden fa-2x"
+          style="color: #aa2ee6"
+        ></i>
         <p id="display">00:00:00</p>
         <audio class="sound" src="timer-clip.wav"></audio>
-       
       </div>
     </div>
     <script src="app.js"></script>

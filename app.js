@@ -4,6 +4,7 @@ const resetBtn = document.querySelector("#reset");
 const display = document.querySelector("#display");
 const setBtn = document.querySelector("#set");
 const sound = document.querySelector(".sound");
+const icon = document.querySelector(".icon");
 
 startBtn.disabled = resetBtn.disabled = true;
 
@@ -85,7 +86,8 @@ function startTimer() {
       totSecs++;
       startBtn.disabled = true;
       resetBtn.innerText = "Stop";
-      
+      icon.classList.remove("hidden");
+
       display.innerText = `Time is up! : - ${hours.value}:${minutes.value}:${seconds.value}`;
       sound.play();
     }
@@ -107,6 +109,7 @@ function resetTimer() {
   setBtn.disabled = false;
   sound.pause();
   sound.currentTime = 0;
+  icon.classList.add("hidden");
 }
 
 function pauseTimer() {

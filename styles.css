@@ -80,8 +80,28 @@ form label {
 }
 
 .fa-stopwatch {
-  display: none;
-}
+  animation: alarm-2 0.5s infinite;
+  }
+
+  @keyframes alarm-2 {
+    0% {
+      transform: rotate(20deg);
+    }
+  
+    25% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(-20deg);
+    }
+    75% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(20deg);
+    }
+
+
 
 .btn:disabled,
 .btn.disabled,

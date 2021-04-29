@@ -30,6 +30,7 @@ const timeArray = [hours, minutes, seconds];
 
 timeArray.forEach((el) => {
   el.input.addEventListener("change", () => {
+    resetBtn.disabled = false;
     let val = el.input.value;
     if (!val) {
       val = "00";
@@ -47,7 +48,7 @@ timeArray.forEach((el) => {
 
 function setTimer(e) {
   e.preventDefault();
- 
+
   if (hours.value == 0 && minutes.value == 0 && seconds.value == 0) {
     resetBtn.disabled = startBtn.disabled = true;
   } else {

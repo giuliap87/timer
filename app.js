@@ -52,11 +52,11 @@ function setTimer(e) {
 }
 
 function startTimer() {
-  let totSecs = +hours.value * 3600 + +minutes.value * 60 + +seconds.value;
+  let totSecs = +hours.value * 3600 + +minutes.value * 60 + +seconds.value -1;
   let timeIsUp = false;
 
   interval = setInterval(() => {
-    console.log("start");
+    console.log(totSecs);
 
     hours.value = Math.floor(totSecs / 3600);
     minutes.value = Math.floor((totSecs % 3600) / 60);

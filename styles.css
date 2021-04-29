@@ -47,6 +47,7 @@ form {
 form input {
   border: 1px solid paleturquoise;
   border-radius: 10px;
+  text-align: center;
 }
 
 form label {

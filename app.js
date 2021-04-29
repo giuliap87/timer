@@ -47,8 +47,12 @@ timeArray.forEach((el) => {
 
 function setTimer(e) {
   e.preventDefault();
-  startBtn.disabled = resetBtn.disabled = false;
-
+ 
+  if (hours.value == 0 && minutes.value == 0 && seconds.value == 0) {
+    resetBtn.disabled = startBtn.disabled = true;
+  } else {
+    startBtn.disabled = resetBtn.disabled = false;
+  }
   display.innerText = `${hours.value}:${minutes.value}:${seconds.value}`;
 }
 

@@ -52,12 +52,11 @@ function setTimer(e) {
 }
 
 function startTimer() {
-  let totSecs = +hours.value * 3600 + +minutes.value * 60 + +seconds.value -1;
+  let totSecs = +hours.value * 3600 + +minutes.value * 60 + +seconds.value - 1;
   let timeIsUp = false;
+  setBtn.disabled = true;
 
   interval = setInterval(() => {
-    console.log(totSecs);
-
     hours.value = Math.floor(totSecs / 3600);
     minutes.value = Math.floor((totSecs % 3600) / 60);
     seconds.value = Math.floor(totSecs % 60);
@@ -97,6 +96,7 @@ function resetTimer() {
 
   toggleBtn = false;
   startBtn.disabled = resetBtn.disabled = true;
+  setBtn.disabled = false;
 }
 
 function pauseTimer() {

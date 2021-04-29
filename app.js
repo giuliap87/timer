@@ -6,13 +6,16 @@ const setBtn = document.querySelector("#set");
 const sound = document.querySelector(".sound");
 const icon = document.querySelector(".icon");
 
+// disabled start and reset button
 startBtn.disabled = resetBtn.disabled = true;
 
+// create global interval var in order to assign it and clear it in diff funcs
 let interval;
 
 // create var to toggle text in start/pause button
 let toggleBtn = false;
 
+// time objs
 const hours = {
   input: document.querySelector("#hours"),
   value: "00",
@@ -28,6 +31,8 @@ const seconds = {
 };
 
 const timeArray = [hours, minutes, seconds];
+
+// loop through time array and listen to inputs change
 
 timeArray.forEach((el) => {
   el.input.addEventListener("change", () => {
@@ -47,23 +52,30 @@ timeArray.forEach((el) => {
   });
 });
 
+// set time in timer
+
 function setTimer(e) {
   e.preventDefault();
 
+  // if all inputs's vals are 0 do not enabled the start btn
   if (hours.value == 0 && minutes.value == 0 && seconds.value == 0) {
-    resetBtn.disabled = startBtn.disabled = true;
+    startBtn.disabled = true;
   } else {
     startBtn.disabled = resetBtn.disabled = false;
   }
+
+  // shows time set by user in paragraph under input
   display.innerText = `${hours.value}:${minutes.value}:${seconds.value}`;
 }
 
 function startTimer() {
+  // calculate tot time in seconds
   let totSecs = +hours.value * 3600 + +minutes.value * 60 + +seconds.value - 1;
   let timeIsUp = false;
   setBtn.disabled = true;
 
   interval = setInterval(() => {
+    // calculate time in hours, mins, secs from seconds
     hours.value = Math.floor(totSecs / 3600);
     minutes.value = Math.floor((totSecs % 3600) / 60);
     seconds.value = Math.floor(totSecs % 60);
@@ -89,6 +101,8 @@ function startTimer() {
       icon.classList.remove("hidden");
 
       display.innerText = `Time is up! : - ${hours.value}:${minutes.value}:${seconds.value}`;
+
+      //play audio clip
       sound.play();
     }
   }, 1000);
@@ -118,6 +132,7 @@ function pauseTimer() {
 
 setBtn.addEventListener("click", setTimer);
 startBtn.addEventListener("click", () => {
+
   toggleBtn = !toggleBtn;
 
   if (toggleBtn) {

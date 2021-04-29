@@ -85,6 +85,7 @@ function startTimer() {
       totSecs++;
       startBtn.disabled = true;
       resetBtn.innerText = "Stop";
+      
       display.innerText = `Time is up! : - ${hours.value}:${minutes.value}:${seconds.value}`;
       sound.play();
     }

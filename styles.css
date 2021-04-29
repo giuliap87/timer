@@ -75,6 +75,10 @@ form label {
   display: inline-block;
 }
 
+.hidden {
+  display: none;
+}
+
 .fa-stopwatch {
   display: none;
 }
@@ -85,4 +89,9 @@ fieldset:disabled {
   pointer-events: auto;
   cursor: not-allowed;
   color: white;
+}
+
+.time-up {
+  display: flex; 
+  flex-direction: column;
 }
